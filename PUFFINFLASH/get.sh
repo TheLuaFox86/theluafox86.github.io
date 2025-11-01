@@ -51,8 +51,8 @@ trap - EXIT
 echo "Saved to $TARGET_PATH"
 
 # Prepare list entry
-REL_PATH="$TARGET_PATH"
-ENTRY="$(printf '  {\n    name: \"%s\",\n    url: \"%s\"\n  },\n' "$NAME_NO_EXT" "$REL_PATH")"
+REL_PATH="$_PATH"
+ENTRY="$(printf '  {\n    name: \"%s\",\n    url: \"%s\"\n  },\n' "$NAME_NO_EXT" "$DECODED_NAME")"
 
 # Ensure list file exists and has a JS array to insert into
 if [[ ! -f "$LIST_FILE" ]]; then

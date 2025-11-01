@@ -7,5 +7,5 @@ window.flashlist = [{
 },
   {
     name: "164481_mutilate-a-doll-2_v4",
-    url: "archive/164481_mutilate-a-doll-2_v4.swf"
-  }];
+    url: "164481_mutilate-a-doll-2_v4.swf"
+  },];

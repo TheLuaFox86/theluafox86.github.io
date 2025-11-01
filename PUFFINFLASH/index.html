@@ -1,0 +1,43 @@
+<!DOCTYPE html><html>
+    <head>
+        <title>
+            Flash Archive
+        </title>
+    </head>
+    <body>
+    <select id="select">
+    </select>
+    <script src="list.js"></script>
+    <script>
+        const select = document.getElementById('select');
+        for (i in flashlist) {
+            select.innerHTML = select.innerHTML + "<option>" + flashlist[i].name + "</option>\n"
+        }
+    </script>
+    <button onclick="loadGame()">Load Game</button>
+    <div id="ruffle-container"></div>
+
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+        <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        // Optional Ruffle configuration settings
+        "autoplay": "on",
+        "splashScreen": false
+    };
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle-container");
+        container.appendChild(player);
+        player.style.width = "700px";
+        player.style.height = "400px";
+
+    function loadGame() {
+        // Load the SWF from the external URL
+        player.load("archive/" + flashlist[select.selectedIndex].url);
+        // Optional: Set player dimensions
+    };
+    </script>
+
+    </body>
+</html>
